@@ -40,10 +40,7 @@ const FormData = (props) => {
             msg.mobileNo= 'Enter your Mobile No'
                 error = false
         } 
-        if(props.state.profileImage === '' || props.state.profileImage ===  undefined) {            
-            msg.profileImage= 'Upload Profile Image'
-                error = false
-        } 
+       
         
         setErrMsg([msg]) 
         return error
@@ -121,13 +118,7 @@ console.log(errMsg)
                     {errMsg[0].mobileNo && <span className={"text-danger"}>{errMsg[0].mobileNo}</span>}
                     </div>
                 </div>
-                <div className={"mb-3 row"}>
-                    <label className={"col-sm-2 col-form-label"}>Profile Photo</label>
-                    <div className="col-sm-2">
-                    <input type='file' className={"form-control-plaintext"} name='profileImage' placeholder='Upload image' value={''} onChange={onChangeHandler}/>
-                    {errMsg[0].profileImage && <span className={"text-danger"}>{errMsg[0].profileImage}</span>}
-                    </div>
-                </div>
+              
                 <div className={"offset-md-2"}>
                     { (props.state.fieldEdit) ? 
                     <button type="submit" className={"btn btn-primary mb-3"} onClick= {(e)=>editHandler(e)}>Edit User</button> 

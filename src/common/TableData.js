@@ -22,7 +22,7 @@ const TableData = (props) => {
                  <td>{item.gender}</td>
                  <td>{item.emailId}</td>
                  <td>{item.mobileNo}</td>
-                 <td><img src = {item.profileImage && URL.createObjectURL(item.profileImage)} width="50" height="50"/></td>
+                 <td><img src = {item.profileImage && URL.createObjectURL(item.profileImage)} width="50" height="50" alt='img'/></td>
                  <td>
                  <button type = 'button' className='btn btn-success' onClick= {()=>editItem(item)}>Edit</button> &nbsp; 
                  <button type='button' className='btn btn-danger' onClick= {()=>deleteItem(item.id)}>Delete</button>

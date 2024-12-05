@@ -22,14 +22,10 @@ class App extends React.Component {
 
      onChangeHandler = (formData) => {
        
-        if(formData.target.files && formData.target.files[0]) {
-            let name=formData.target.name
-            let img = URL.createObjectURL(formData.target.files[0])           
-            this.setState({ [name] : formData.target.files[0] })           
-        }else{
+       
        const { name, value } = formData.target       
        this.setState({ [name] : value })
-        }
+       
     }
     editItem = (item) => {
         this.setState({fieldEdit:true, ...item})

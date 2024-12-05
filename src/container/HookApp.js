@@ -31,14 +31,10 @@ const HookApp = () => {
   // }
   const onChangeHandler = (formData) => {
     let sat = state;
-    if (formData.target.files && formData.target.files[0]) {
-      let name = formData.target.name;
-      let img = URL.createObjectURL(formData.target.files[0]);
-      setState({ ...sat, [name]: formData.target.files[0] });
-    } else {
+   
       const { name, value } = formData.target;
       setState({ ...sat, [name]: value });
-    }
+    
   };
   const editItem = (item) => {
     setState({ fieldEdit: true, ...item });
